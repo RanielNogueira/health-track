@@ -1,0 +1,21 @@
+{
+  "name": "health-track-fiap",
+  "version": "1.0.0",
+  "description": "Template do projeto Health Track, 1° semestre - ADS - FIAP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "health",
+    "track",
+    "fiap"
+  ],
+  "author": "Raniel Nogueira",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "sweet-alert": "^2.0.5"
+  }
+}
