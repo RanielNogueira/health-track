@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Health Track</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- CSS customizado -->
+    <link rel="stylesheet" href="src/css/styles.css">
+
+    <!-- Font Awesome JS -->
+    <script src="src/libs/fontawesome/js/fontawesome.min.js"></script>
+    <script src="src/libs/fontawesome/js/solid.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Health Track</h3>
+                <strong>HT</strong>
+            </div>
+
+            <div class="py-4 px-3 mb-2" style="background-color: #579cc4 !important">
+                <div class="media d-flex align-items-center">
+                    <img src="src/img/user.png" alt="Olá, usuário" width="50"
+                        class="mr-3 rounded-circle img-thumbnail shadow-sm">
+                    <div class="media-body" id="nameUser">
+                        <h4 class="m-0">Olá, Raniel</h4>
+                        <a href="#" class="font-weight-bolder text-muted mb-0"
+                            style="color:#73b1d5 !important;">Perfil</a>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li class="" id="pageDashboard">
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+
+                </li>
+                <li id="pageBatimentos">
+                    <a href="batimentos.html">
+                        <i class="fas fa-heartbeat"></i>
+                        Batimentos
+                    </a>
+
+                </li>
+                <li id="pagePressao">
+                    <a href="pressao.html">
+                        <i class="fas fa-file-medical-alt"></i>
+                        Pressão
+                    </a>
+                </li>
+                <li id="pageIMC">
+                    <a href="imc.html">
+                        <i class="fas fa-weight"></i>
+                        IMC
+                    </a>
+                </li>
+                <li id="pageAlimentacao">
+                    <a href="alimentacao.html">
+                        <i class="fas fa-carrot"></i>
+                        Alimentação
+                    </a>
+                </li>
+                <li id="pageExercicio">
+                    <a href="exercicio.html">
+                        <i class="fas fa-basketball-ball"></i>
+                        Exercicios
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="login.html" class="text-center"><i class="fa fa-arrow-circle-left"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-default">
+                        <i class="fas fa-align-left"></i>
+
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <span class="text-muted">Dashboard</span>
+                </div>
+            </nav>
+
+
+            <div class="row">
+                <div class="col-xl-3 col-sm-12 py-2">
+                    <div class="card bg-success text-white">
+                        <div class="card-body bg-success">
+                            <div class="rotate">
+                                <i class="fa fa-stethoscope fa-3x"></i>
+                            </div>
+                            <h6 class="text-uppercase">Batimentos</h6>
+                            <h1 class="display-4">82</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-12 py-2">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body bg-warning">
+                            <div class="rotate">
+                                <i class="fa fa-running fa-3x"></i>
+                            </div>
+                            <h6 class="text-uppercase">Exercícios</h6>
+                            <h1 class="display-4">48m.</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-12 py-2">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body bg-danger">
+                            <div class="rotate">
+                                <i class="fa fa-weight fa-3x"></i>
+                            </div>
+                            <h6 class="text-uppercase">IMC</h6>
+                            <h1 class="display-4">28</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-12 py-2">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body bg-primary">
+                            <div class="rotate">
+                                <i class="fa fa-drumstick-bite fa-3x"></i>
+                            </div>
+                            <h6 class="text-uppercase">CALORIAS NO DIA</h6>
+                            <h1 class="display-4">900</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts de customização -->
+    <script src="src/js/custom.js"></script>
+    <script>
+        $("#pageDashboard").addClass("active");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Health Track</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- CSS customizado -->
+    <link rel="stylesheet" href="src/css/styles.css">
+
+    <!-- Font Awesome JS -->
+    <script src="src/libs/fontawesome/js/fontawesome.min.js"></script>
+    <script src="src/libs/fontawesome/js/solid.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar-->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Health Track</h3>
+                <strong>HT</strong>
+            </div>
+
+            <div class="py-4 px-3 mb-2" style="background-color: #579cc4 !important">
+                <div class="media d-flex align-items-center">
+                    <img src="src/img/user.png" alt="Olá, usuário" width="50"
+                        class="mr-3 rounded-circle img-thumbnail shadow-sm">
+                    <div class="media-body" id="nameUser">
+                        <h4 class="m-0">Olá, Raniel</h4>
+                        <a href="#" class="font-weight-bolder text-muted mb-0"
+                            style="color:#73b1d5 !important;">Perfil</a>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li class="" id="pageDashboard">
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+
+                </li>
+                <li id="pageBatimentos">
+                    <a href="batimentos.html">
+                        <i class="fas fa-heartbeat"></i>
+                        Batimentos
+                    </a>
+
+                </li>
+                <li id="pagePressao">
+                    <a href="pressao.html">
+                        <i class="fas fa-file-medical-alt"></i>
+                        Pressão
+                    </a>
+                </li>
+                <li id="pageIMC">
+                    <a href="imc.html">
+                        <i class="fas fa-weight"></i>
+                        IMC
+                    </a>
+                </li>
+                <li id="pageAlimentacao">
+                    <a href="alimentacao.html">
+                        <i class="fas fa-carrot"></i>
+                        Alimentação
+                    </a>
+                </li>
+                <li id="pageExercicio">
+                    <a href="exercicio.html">
+                        <i class="fas fa-basketball-ball"></i>
+                        Exercicios
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="login.html" class="text-center"><i class="fa fa-arrow-circle-left"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-default">
+                        <i class="fas fa-align-left"></i>
+
+                    </button>
+
+
+                    <button class="btn btn-success d-inline-block" data-toggle="modal" data-target="#modalPeso"> <i
+                            class="fa fa-plus"></i> Novo</button>
+
+                </div>
+            </nav>
+
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center text-muted">Registros de pressão</h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-striped table-hover" id="tblMedidas">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Peso</th>
+                                        <th>Medida</th>
+                                        <th>IMC</th>
+                                        <th>Data</th>
+                                        <th>Editar</th>
+                                        <th>Deletar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>81kg</td>
+                                        <td>103cm</td>
+                                        <td>30</td>
+                                        <td>02/07/2019</td>
+                                        <td><button onclick="pegaMedida(this)" class="btn btn-warning btn-sm btn-xs"><i class="fa fa-edit"></i>
+                                                Editar</button></td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm btn-xs"><i
+                                                    class="fa fa-minus-circle"></i>
+                                                Deletar</button>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>71kg</td>
+                                        <td>83cm</td>
+                                        <td>25</td>
+                                        <td>16/07/2019</td>
+                                        <td><button class="btn btn-warning btn-sm btn-xs"><i class="fa fa-edit"></i>
+                                                Editar</button></td>
+                                        <td>
+                                            <button class="btn btn-danger btn-sm btn-xs"><i
+                                                    class="fa fa-minus-circle"></i>
+                                                Deletar</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal - Registro de peso -->
+            <div class="modal fade" id="modalPeso" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Novo registro</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="form-row">
+                                    <div class="col-xl-6">
+                                        <label class="control-label">Peso</label>
+                                        <input type="text" class="form-control" id="peso"
+                                            placeholder="Digite o peso ex: 75">
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <label class="control-label">Medida</label>
+                                        <input  type="text" id="medida" class="form-control" placeholder="Medidas em cm">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                    class="fa fa-times"></i> Fechar</button>
+                            <button type="button" onclick="add()" class="btn btn-success"><i class="fa fa-save"></i> Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts de customização -->
+    <script src="src/js/custom.js"></script>
+    <script>
+        $("#pagePressao").addClass("active");
+
+        function add(){
+
+            var medida = $("#medida").val();
+            var peso = $("#peso").val();
+
+            var IMC = {id : 3,peso : peso,medida: medida,imc: peso/(1.57*1.57) , data: new Date(Date.now()).toLocaleDateString()}
+
+            var tableInsert = $("#tblMedidas > tbody:last-child");
+
+            var row = '<tr>'+
+                `<td>${tableInsert[0].childElementCount+1}</td>`+
+                `<td>${IMC.peso}kg</td>`+
+                `<td>${IMC.medida}cm</td>`+
+                `<td>${IMC.imc.toString().substring(0,4)}</td>`+
+                `<td>${IMC.data}</td>`+
+                `<td><button onclick='pegaMedida(this)' class='btn btn-warning btn-sm btn-xs'><i class='fa fa-edit'></i> Editar</button></td>`+
+                `<td><button class='btn btn-danger btn-sm btn-xs'><i class='fa fa-minus-circle'></i> Deletar</button></td></tr>`
+          
+          tableInsert.append(row);
+
+               
+        }
+
+
+
+    </script>
+</body>
+
+</html>
