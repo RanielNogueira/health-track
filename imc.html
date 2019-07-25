@@ -176,26 +176,28 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <form action="">
-                                <div class="form-row">
-                                    <div class="col-xl-6">
-                                        <label class="control-label">Peso</label>
-                                        <input type="text" class="form-control" id="peso"
-                                            placeholder="Digite o peso ex: 75">
+                        <form action="" id="formSave">
+                            <div class="modal-body">
+                    
+                                    <div class="form-row">
+                                        <div class="col-xl-6">
+                                            <label class="control-label">Peso</label>
+                                            <input type="number" class="form-control" id="peso"
+                                            name="peso" placeholder="Digite o peso ex: 75">
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <label class="control-label">Medida</label>
+                                            <input  type="number" id="medida" name="medida" class="form-control" placeholder="Medidas em cm">
+                                        </div>
                                     </div>
-                                    <div class="col-xl-6">
-                                        <label class="control-label">Medida</label>
-                                        <input  type="text" id="medida" class="form-control" placeholder="Medidas em cm">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
-                                    class="fa fa-times"></i> Fechar</button>
-                            <button type="button" onclick="add()" class="btn btn-success"><i class="fa fa-save"></i> Salvar</button>
-                        </div>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i> Fechar</button>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Salvar</button>
+                            </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -205,41 +207,13 @@
 
     <!-- jQuery -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/additional-methods.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Scripts de customização -->
     <script src="src/js/custom.js"></script>
-    <script>
-        $("#pageIMC").addClass("active");
-
-
-
-        function add(){
-
-            var medida = $("#medida").val();
-            var peso = $("#peso").val();
-
-            var IMC = {id : 3,peso : peso,medida: medida,imc: peso/(1.57*1.57) , data: new Date(Date.now()).toLocaleDateString()}
-
-            var tableInsert = $("#tblMedidas > tbody:last-child");
-
-            var row = '<tr>'+
-                `<td>${tableInsert[0].childElementCount+1}</td>`+
-                `<td>${IMC.peso}kg</td>`+
-                `<td>${IMC.medida}cm</td>`+
-                `<td>${IMC.imc.toString().substring(0,4)}</td>`+
-                `<td>${IMC.data}</td>`+
-                `<td><button onclick='pegaMedida(this)' class='btn btn-warning btn-sm btn-xs'><i class='fa fa-edit'></i> Editar</button></td>`+
-                `<td><button class='btn btn-danger btn-sm btn-xs'><i class='fa fa-minus-circle'></i> Deletar</button></td></tr>`
-          
-          tableInsert.append(row);
-
-               
-        }
-
-
-
-    </script>
+    <script src="src/js/scripts/imc.js"></script>
 </body>
 
 </html>

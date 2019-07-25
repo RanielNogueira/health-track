@@ -36,17 +36,17 @@
                             <div class="col-lg-10 col-xl-7 mx-auto">
                                 <h3 class="display-4">Health Track</h3>
                                 <p class="text-muted mb-4">Sua saúde em primeiro lugar!</p>
-                                <form action="dashboard.html">
+                                <form id="formLogin" name="formLogin" action="dashboard.html">
                                     <div class="form-group mb-3">
-                                        <input id="inputEmail" type="email" placeholder="Email" required="" autofocus=""
+                                        <input id="email" type="email" name="email" placeholder="Email" autofocus=""
                                             class="form-control rounded-pill border-0 shadow-sm px-4">
                                     </div>
                                     <div class="form-group mb-3">
-                                        <input id="inputPassword" type="password" placeholder="Senha" required=""
+                                        <input id="senha" type="password" placeholder="Senha" name="senha"
                                             class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
                                     </div>
                                     <div class="custom-control custom-checkbox mb-3">
-                                        <input id="customCheck1" type="checkbox" checked class="custom-control-input">
+                                        <input id="customCheck1" type="checkbox" name="gravarSenha" checked class="custom-control-input">
                                         <label for="customCheck1" class="custom-control-label">Lembrar senha</label>
                                     </div>
                                     <button type="submit"
@@ -70,6 +70,9 @@
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="./src/js/scripts/login.js"></script>
 </body>
 
 </html>

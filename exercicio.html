@@ -173,26 +173,29 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <form action="">
-                                <div class="form-row">
-                                    <div class="col-xl-8">
-                                        <label class="control-label">Exercício</label>
-                                        <select class="form-control" id="exercicio">
-                                        </select>
+                        <form action="" id="formSave">
+                            <div class="modal-body">
+                            
+                                    <div class="form-row">
+                                        <div class="col-xl-8">
+                                            <label class="control-label">Exercício</label>
+                                            <select class="form-control" id="exercicio" name="exercicio">
+                                                <option value="" selected></option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-4">
+                                            <label class="control-label">Duração (min)</label>
+                                            <input  type="number" min="1" value="1" id="minutos" name="minutos" class="form-control">
+                                        </div>
                                     </div>
-                                    <div class="col-xl-4">
-                                        <label class="control-label">Duração (min)</label>
-                                        <input  type="number" min="1" value="1" id="minutos" class="form-control">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
-                                    class="fa fa-times"></i> Fechar</button>
-                            <button type="button" onclick="add()" class="btn btn-success"><i class="fa fa-save"></i> Salvar</button>
-                        </div>
+                        
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i> Fechar</button>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Salvar</button>
+                            </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -202,59 +205,13 @@
 
     <!-- jQuery -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/additional-methods.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Scripts de customização -->
     <script src="src/js/custom.js"></script>
-    <script>
-        
-        $("#pageExercicio").addClass("active");
-
-        function add(){
-
-            var exercicio = $("#exercicio")[0].selectedOptions[0];
-            var duracao = $("#minutos").val();
-
-            var _exercicio = { exercicio : exercicio.text,duracao : duracao , data: new Date(Date.now()).toLocaleString()}
-
-            var tableInsert = $("#tblAlimentacao > tbody:last-child");
-
-            var row = '<tr>'+
-                `<td>${tableInsert[0].childElementCount+1}</td>`+
-                `<td>${_exercicio.exercicio}</td>`+
-                `<td>${_exercicio.duracao}min</td>`+
-                `<td>${_exercicio.data}</td>`+
-                `<td><button onclick='pegaMedida(this)' class='btn btn-warning btn-sm btn-xs'><i class='fa fa-edit'></i> Editar</button></td>`+
-                `<td><button class='btn btn-danger btn-sm btn-xs'><i class='fa fa-minus-circle'></i> Deletar</button></td></tr>`
-          
-          tableInsert.append(row);
-
-               
-        }
-
-
-        var exercicios = [
-           "Caminhada esteira elétrica",
-           "Caminhada de rua leve",
-           "Caminhada de rua intensa",
-           "Ciclismo",
-           "Corrida moderada",
-           "Corrida intensa",
-           "Sessão de pilates",
-           "Sessão de crossfit"
-        ]
-
-
-        var inputExercicios = $("#exercicio");
-
-
-        exercicios.map(function(item){
-            inputExercicios.append(`<option value="${item}" >${item}</option>`)
-        })
-
-        
-
-    </script>
+    <script src="src/js/scripts/exercicios.js"></script>
 </body>
 
 </html>

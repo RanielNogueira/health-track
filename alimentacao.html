@@ -177,25 +177,27 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="">
+                            <form action="" id="formSave">
                                 <div class="form-row">
                                     <div class="col-xl-9">
                                         <label class="control-label">Alimento</label>
-                                        <select class="form-control" id="alimento">
-                                        </select>
+                                            <select class="form-control" id="alimento" name="alimento">
+                                                <option value="" selected></option>
+                                            </select>
                                     </div>
                                     <div class="col-xl-3">
                                         <label class="control-label">Quantidade</label>
-                                        <input  type="number" min="1" value="1" id="quantidade" class="form-control">
+                                        <input  type="number" min="1" value="1" id="quantidade" name="quantidade" class="form-control required">
                                     </div>
                                 </div>
-                            </form>
+                          
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
                                     class="fa fa-times"></i> Fechar</button>
-                            <button type="button" onclick="add()" class="btn btn-success"><i class="fa fa-save"></i> Salvar</button>
+                            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Salvar</button>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -205,64 +207,13 @@
 
     <!-- jQuery -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/additional-methods.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Scripts de customização -->
     <script src="src/js/custom.js"></script>
-    <script>
-        
-        $("#pageAlimentacao").addClass("active");
-
-        function add(){
-
-            var alimento = $("#alimento")[0].selectedOptions[0];
-            var quantidade = $("#quantidade").val();
-
-            var _alimento = { alimento : alimento.text,quantidade : quantidade ,calorias : (parseInt(alimento.value)*quantidade) , data: new Date(Date.now()).toLocaleString()}
-
-            var tableInsert = $("#tblAlimentacao > tbody:last-child");
-
-            var row = '<tr>'+
-                `<td>${tableInsert[0].childElementCount+1}</td>`+
-                `<td>${_alimento.alimento}</td>`+
-                `<td>${_alimento.quantidade}</td>`+
-                `<td>${_alimento.calorias}kcal</td>`+
-                `<td>${_alimento.data}</td>`+
-                `<td><button onclick='pegaMedida(this)' class='btn btn-warning btn-sm btn-xs'><i class='fa fa-edit'></i> Editar</button></td>`+
-                `<td><button class='btn btn-danger btn-sm btn-xs'><i class='fa fa-minus-circle'></i> Deletar</button></td></tr>`
-          
-          tableInsert.append(row);
-
-               
-        }
-
-
-        var alimentos = [
-            { alimento : "Arroz integral cozido 100g", caloria : 112 },
-            { alimento : "Bacon frito 2 cubos (30g)", caloria : 198 },
-            { alimento : "Banana 100g", caloria : 122 },
-            { alimento : "Bolo de Laranja 1 fatia (50g)", caloria : 173 },
-            { alimento : "Feijão carioca 100g", caloria : 77 },
-            { alimento : "Maça 100g", caloria : 52 },
-            { alimento : "Omelete 100g", caloria : 154 },
-            { alimento : "Patinho de boi assado 3 fatias (100g)", caloria : 200 },
-            { alimento : "Peito de frango grelhado 100g", caloria : 165 },               
-            { alimento : "Suco de abacaxi natural 240 ml", caloria : 100 },
-            { alimento : "Suco de manga natural 240 ml", caloria : 109 },
-            { alimento : "Torrada 100g", caloria : 313 }
-        ]
-
-
-        var inputAlimentos = $("#alimento");
-
-
-        alimentos.map(function(item){
-            inputAlimentos.append(`<option value="${item.caloria}" >${item.alimento}</option>`)
-        })
-
-        
-
-    </script>
+    <script src="src/js/scripts/alimentacao.js"></script>
 </body>
 
 </html>

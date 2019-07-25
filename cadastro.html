@@ -37,30 +37,26 @@
                             <div class="col-lg-10 col-xl-7 mx-auto">
                                 <h3 class="display-4">Health Track</h3>
                                 <p class="text-muted mb-4">Cadastro de usuário</p>
-                                <form action="dashboard.html">
+                                <form action="dashboard.html" id="formCadastro">
                                     <div class="form-group mb-3">
-                                        <input id="inputNome" type="text" placeholder="Digite seu nome" required=""
+                                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome"
                                             autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                     </div>
-                                    <div class="form-group mb-3 ml-0 row">
-                                        <input id="inputPeso" type="number" placeholder="Peso" style="width: 45%;"
-                                            required="" autofocus=""
-                                            class="form-control rounded-pill border-0 shadow-sm px-4 mr-4">
-                                        <input id="inputIdade" type="number" placeholder="Idade" style="width: 45%;"
-                                            required="" autofocus=""
+                                    <div class="form-group mb-3">
+                                            <input type="number" id="peso" name="peso" placeholder="Peso" autofocus=""
+                                                class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                            <input type="number" id="idade" name="idade" placeholder="Idade" autofocus=""
+                                                class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input type="email" id="email" name="email" placeholder="Email" autofocus=""
                                             class="form-control rounded-pill border-0 shadow-sm px-4">
                                     </div>
                                     <div class="form-group mb-3">
-                                        <input id="inputEmail" type="email" placeholder="Email" required="" autofocus=""
-                                            class="form-control rounded-pill border-0 shadow-sm px-4">
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <input id="inputPassword" type="password" placeholder="Senha" required=""
+                                        <input type="password" id="senha" name="senha" placeholder="Senha"
                                             class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
-                                    </div>
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input id="customCheck1" type="checkbox" checked class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Lembrar senha</label>
                                     </div>
                                     <button type="submit"
                                         class="btn btn-info btn-block text-uppercase mb-2 rounded-pill shadow-sm"><i
@@ -82,6 +78,9 @@
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="src/js/scripts/cadastro.js"></script>
 </body>
 
 </html>

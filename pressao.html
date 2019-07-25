@@ -18,16 +18,16 @@
     <script src="src/libs/fontawesome/js/solid.min.js"></script>
 
     <style>
-        .badge-warning{
-            color:#FFF;
+        .badge-warning {
+            color: #FFF;
         }
 
-        .badge-warning-level-1{
+        .badge-warning-level-1 {
             color: #FFF;
             background-color: #ff9307ee;
         }
 
-        .badge-warning-level-2{
+        .badge-warning-level-2 {
             color: #FFF;
             background-color: #b46805ee;
         }
@@ -118,11 +118,11 @@
                     </button>
 
                     <div class="float-right">
-                        
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalReferencia"> <i
-                        class="fa fa-info-circle"></i> Referêcia</button>
-                    <button class="btn btn-success" data-toggle="modal" data-target="#modalPressao"> <i
-                            class="fa fa-plus"></i> Novo</button>
+
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalReferencia"> <i
+                                class="fa fa-info-circle"></i> Referêcia</button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#modalPressao"> <i
+                                class="fa fa-plus"></i> Novo</button>
                     </div>
 
                 </div>
@@ -155,7 +155,8 @@
                                         <td>60</td>
                                         <td class="text-center"><label class="badge badge-success">Normal</label></td>
                                         <td>18/07/2019 09:30</td>
-                                        <td><button onclick="pegaMedida(this)" class="btn btn-warning btn-sm btn-xs"><i class="fa fa-edit"></i>
+                                        <td><button onclick="pegaMedida(this)" class="btn btn-warning btn-sm btn-xs"><i
+                                                    class="fa fa-edit"></i>
                                                 Editar</button></td>
                                         <td>
                                             <button class="btn btn-danger btn-sm btn-xs"><i
@@ -170,7 +171,8 @@
                                         <td>78</td>
                                         <td class="text-center"><label class="badge badge-warning">Elevada</label></td>
                                         <td>18/07/2019 11:30</td>
-                                        <td><button onclick="pegaMedida(this)" class="btn btn-warning btn-sm btn-xs"><i class="fa fa-edit"></i>
+                                        <td><button onclick="pegaMedida(this)" class="btn btn-warning btn-sm btn-xs"><i
+                                                    class="fa fa-edit"></i>
                                                 Editar</button></td>
                                         <td>
                                             <button class="btn btn-danger btn-sm btn-xs"><i
@@ -196,114 +198,75 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <form action="">
+                        <form action="" id="formSave">
+                            <div class="modal-body">
+
                                 <div class="form-row">
                                     <div class="col-xl-6">
                                         <label class="control-label">Sitólica</label>
                                         <input type="number" class="form-control" id="sistolica"
-                                            placeholder="Medida mais alta">
+                                        name="sistolica"  placeholder="Medida mais alta">
                                     </div>
                                     <div class="col-xl-6">
                                         <label class="control-label">Distólica</label>
-                                        <input  type="number" id="distolica" class="form-control" placeholder="Medida menor">
+                                        <input type="number" id="distolica" class="form-control"
+                                        name="distolica"  placeholder="Medida menor">
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
-                                    class="fa fa-times"></i> Fechar</button>
-                            <button type="button" onclick="add()" class="btn btn-success"><i class="fa fa-save"></i> Salvar</button>
-                        </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                        class="fa fa-times"></i> Fechar</button>
+                                <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>
+                                    Salvar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
 
-             <!-- Modal - Registro de referência -->
-             <div class="modal fade" id="modalReferencia" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-xl" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Referência tabela de pressão</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+            <!-- Modal - Registro de referência -->
+            <div class="modal fade" id="modalReferencia" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Referência tabela de pressão</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <img src="src/img/referencia.png" class="img-fluid" alt="">
                             </div>
-                            <div class="modal-body">
-                                <div class="text-center">
-                                        <img src="src/img/referencia.png" class="img-fluid" alt="">
-                                    </div>
-                                 
-                            </div>
-                            <div class="modal-footer">
 
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
-                                        class="fa fa-times"></i> Fechar</button>
-                                
-                                <a class="btn btn-info" target="blank" href="https://drauziovarella.uol.com.br/hipertensao/saiba-como-interpretar-sua-medida-de-pressao-arterial/"><i class="fa fa-link"></i> Referência Externa</a>
-                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                                    class="fa fa-times"></i> Fechar</button>
+
+                            <a class="btn btn-info" target="blank"
+                                href="https://drauziovarella.uol.com.br/hipertensao/saiba-como-interpretar-sua-medida-de-pressao-arterial/"><i
+                                    class="fa fa-link"></i> Referência Externa</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
         </div>
     </div>
 
     <!-- jQuery -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="node_modules/jquery-validation/dist/additional-methods.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Scripts de customização -->
     <script src="src/js/custom.js"></script>
-    <script>
-        $("#pagePressao").addClass("active");
-
-        var verificaPressao = (sistolica,distolica) => {
-
-            if(sistolica < 120 && distolica < 80){
-                return { valor : "Normal", classe : "badge badge-success" };
-            }
-            else if(((sistolica >= 120 &&  sistolica <= 129) ? true : false) == true && distolica < 80){
-                return { valor : "Elevada", classe : "badge badge-warning" };
-            }
-            else if(sistolica > 129 || distolica > 80){
-                    if(sistolica < 140 && distolica < 90)
-                        return { valor : "Hipertensão Estágio 1", classe : "badge badge-warning-level-1" };
-                    if(sistolica < 180 && distolica < 120)
-                        return { valor : "Hipertensão Estágio 2", classe : "badge badge-warning-level-2" };
-                    if(sistolica >= 180 || distolica > 120)
-                        return { valor : "Crise hipertensiva", classe : "badge badge-danger" };
-            }
-
-        }
-
-        function add(){
-
-            var sistolica = $("#sistolica").val();
-            var distolica = $("#distolica").val();
-
-            var pressao = { sistolica : sistolica , distolica: distolica,resultado : this.verificaPressao(sistolica,distolica) , data: new Date(Date.now()).toLocaleString()}
-
-            var tableInsert = $("#tblPressao > tbody:last-child");
-
-            console.log(pressao)
-
-            var row = '<tr>'+
-                `<td>${tableInsert[0].childElementCount+1}</td>`+
-                `<td>${pressao.sistolica}</td>`+
-                `<td>${pressao.distolica}</td>`+
-                `<td class='text-center'><label class="badge ${pressao.resultado.classe}">${pressao.resultado.valor}</label></td>`+
-                `<td>${pressao.data}</td>`+
-                `<td><button onclick='pegaMedida(this)' class='btn btn-warning btn-sm btn-xs'><i class='fa fa-edit'></i> Editar</button></td>`+
-                `<td><button class='btn btn-danger btn-sm btn-xs'><i class='fa fa-minus-circle'></i> Deletar</button></td></tr>`
-          
-          tableInsert.append(row);
-
-               
-        }
-
-    </script>
+    <script src="src/js/scripts/pressao.js"></script>
 </body>
 
 </html>
